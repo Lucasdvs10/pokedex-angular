@@ -1,0 +1,14 @@
+<div id = "card">
+    <mat-card *ngIf="pokemon" >
+      <mat-card-title>{{ pokemon.GetNome() }}</mat-card-title>
+      <mat-card-subtitle>Nº {{ pokemon.GetId() }}</mat-card-subtitle>
+      <mat-card-content>
+        <img
+          mat-card-image
+          src="{{ pokemon.GetSpritePath() }}"
+          alt="Uma foto do {{ pokemon.GetNome() }}"
+          height="200"
+        />
+      </mat-card-content>
+    </mat-card>
+</div>

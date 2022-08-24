@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonCardComponentComponent } from './components/pokemon-card-component/pokemon-card-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardsListComponentComponent } from './components/cards-list-component/cards-list-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonCardComponentComponent
+    PokemonCardComponentComponent,
+    CardsListComponentComponent
   ],
   imports: [
     BrowserModule,
