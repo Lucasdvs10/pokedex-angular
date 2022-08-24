@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cards-list-component.component.html',
   styleUrls: ['./cards-list-component.component.css']
 })
-export class CardsListComponentComponent {
+export class CardsListComponentComponent implements OnInit {
+  
+   ngOnInit(): void {
+     
+   }
 
    pokemonsList! : Pokemon[]
 
