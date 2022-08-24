@@ -1,3 +1,4 @@
+import { FetchPokemonsService } from './../../services/fetch-pokemons-service';
 import { Pokemon } from './../../../entities/pokemon';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,8 +11,11 @@ export class CardsListComponentComponent implements OnInit {
 
   pokemonsList! : Pokemon[]
 
+  constructor(private fetchPokemonsService : FetchPokemonsService){
+  }
+
    ngOnInit(): void {
-     
+     this.pokemonsList = this.fetchPokemonsService.FetchPokemonsList()
    }
 
 

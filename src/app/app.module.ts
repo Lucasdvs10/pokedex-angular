@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PokemonCardComponentComponent } from './components/pokemon-card-component/pokemon-card-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardsListComponentComponent } from './components/cards-list-component/cards-list-component.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { CardsListComponentComponent } from './components/cards-list-component/c
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
