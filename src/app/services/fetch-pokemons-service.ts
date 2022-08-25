@@ -1,5 +1,7 @@
 import { Pokemon } from '../../entities/pokemon';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +9,20 @@ import { Injectable } from '@angular/core';
 export class FetchPokemonsService {
 
 
+  constructor(private apiClient : HttpClient){
+  }
+
   private pokemonsList : Pokemon[] = [
   ]
   
+
+  private async MakeRequest(){
+    let request = await this.apiClient.get<any>("https://pokeapi.co/api/v2/pokemon/charmander")
+
+
+
+  }
+
   private AddPokemonInList(pokemon : Pokemon) : void{
     this.pokemonsList.push(pokemon)
   }
