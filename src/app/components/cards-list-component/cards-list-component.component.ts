@@ -8,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards-list-component.component.css'],
 })
 export class CardsListComponentComponent implements OnInit {
-  pokemonsList!:Pokemon[];
+  pokemonsList!: Pokemon[];
 
   constructor(private fetchPokemonsService: FetchPokemonsService) {}
 
-  async kappa(){
-    this.fetchPokemonsService.GetPokemonsList().then(promisse =>{
-      this.pokemonsList = promisse
+  async InitializePokemonsList() {
+    this.fetchPokemonsService.GetPokemonsList().then((response) => {
+      this.pokemonsList = response;
     });
   }
 
-  ngOnInit(): void {
-    this.kappa()
+   ngOnInit() {
+    this.InitializePokemonsList();
   }
 }

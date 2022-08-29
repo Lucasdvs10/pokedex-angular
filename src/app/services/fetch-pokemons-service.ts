@@ -1,6 +1,5 @@
 import { Pokemon } from '../../entities/pokemon';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -12,31 +11,22 @@ export class FetchPokemonsService {
     this.pokemonsList.push(pokemon);
   }
 
-  constructor(private apiClient: HttpClient) {}
+  constructor() {}
 
-  async fetchPokemon() {
+  async FetchPokemon() {
     for (let i = 1; i <= 152; i++) {
-      let observableClient = this.apiClient.get<any>(
-        `https://pokeapi.co/api/v2/pokemon/${i}`
-      );
+      let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      let jsonResponse = await data.json();
 
-      observableClient.subscribe(async (apiResponse) => {
-        let pokemon = await new Pokemon(
-          await apiResponse['name'],
-          await apiResponse['id'],
-          ['lorem ipson'],
-          await apiResponse['sprites']['front_default']
-        );
+      let pokemon = new Pokemon(jsonResponse["name"], jsonResponse["id"], ["lorem ipson"], jsonResponse["sprites"]["front_default"])
 
-        this.AddPokemonInList(pokemon);
-
-        console.log(pokemon.GetNome());
-      });
+      this.AddPokemonInList(pokemon);
     }
   }
 
   public async GetPokemonsList() {
-    await this.fetchPokemon();
+    await this.FetchPokemon();
     return this.pokemonsList;
   }
 }
+
