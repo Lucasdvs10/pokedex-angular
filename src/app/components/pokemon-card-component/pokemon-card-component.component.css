@@ -1,4 +1,4 @@
-#card {
+.card {
   display: inline-block;
   background-color: rgba(233, 233, 233, 0.596);
   margin: 10px;
@@ -16,7 +16,12 @@
   border-bottom: 5px solid rgb(255, 29, 97);
 }
 
-#card > h3 {
+.card:hover {
+  box-shadow: 5px 5px 5px #9b9b9b;
+  cursor: pointer;
+}
+
+.card > h3 {
   color: grey;
 
   margin: 0px;

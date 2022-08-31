@@ -1,12 +1,10 @@
-<div id = "card">
-
-    <h2>{{pokemon.GetNome()}}</h2>
-    <h3>Nº {{pokemon.GetId()}}</h3>
-        <img
-          mat-card-image
-          src="{{ pokemon.GetSpritePath() }}"
-          alt="Uma foto do {{ pokemon.GetNome() }}"
-          height="200"
-        />
-
+<div class="card">
+  <h2>{{ pokemon.GetNome() }}</h2>
+  <h3>Nº {{ pokemon.GetId() }}</h3>
+  <img
+    mat-card-image
+    src="{{ pokemon.GetSpritePath() }}"
+    alt="Uma foto do {{ pokemon.GetNome() }}"
+    height="200"
+  />
 </div>
