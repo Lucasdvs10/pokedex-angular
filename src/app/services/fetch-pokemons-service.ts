@@ -13,7 +13,7 @@ export class FetchPokemonsService {
 
   constructor() {}
 
-  async FetchPokemon() {
+  private async FetchPokemon() {
     for (let i = 1; i <= 152; i++) {
       let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
       let jsonResponse = await data.json();
