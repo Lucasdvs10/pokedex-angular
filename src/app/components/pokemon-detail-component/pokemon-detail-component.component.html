@@ -5,10 +5,9 @@
 <main>
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.GetId()}}.png" alt="Uma foto de {{pokemon.GetNome()}}" width="300">
 
-    <div id="stats-card">
-        <span id="height">Height: </span>
-        <span id="weight">Weight: </span>
-        <span id="abilities">Ability: </span>
-    </div>
+    <span id="stats-card">
+        <span id="height">Height: {{pokemon.GetHeight()}} feet</span>
+        <span id="weight">Weight: {{pokemon.GetWeight()}} pounds</span>
+    </span>
 
 </main>
