@@ -1,5 +1,5 @@
 export class Pokemon {
-    constructor(private name: string, private id : number, private typesList : string[], private spritePath : string) {
+    constructor(private name: string, private id : number, private typesList : string[], private spritePath : string, private height:number, private weight:number) {
     }
 
     public GetNome() : string{
@@ -16,6 +16,15 @@ export class Pokemon {
 
     public GetSpritePath() : string{
         return this.spritePath
+    }
+
+    public GetHeight() :number{
+        return this.height
+    }
+
+
+    public GetWeight() :number{
+        return this.weight
     }
 
 }

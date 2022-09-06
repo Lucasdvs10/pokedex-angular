@@ -18,7 +18,7 @@ export class FetchPokemonsService {
       let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
       let jsonResponse = await data.json();
 
-      let pokemon = new Pokemon(jsonResponse["name"], jsonResponse["id"], ["lorem ipson"], jsonResponse["sprites"]["front_default"])
+      let pokemon = new Pokemon(jsonResponse["name"], jsonResponse["id"], ["lorem ipson"], jsonResponse["sprites"]["front_default"],jsonResponse["height"], jsonResponse["weight"])
 
       this.AddPokemonInList(pokemon);
     }

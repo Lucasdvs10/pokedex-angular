@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from 'src/entities/pokemon';
 
 @Component({
   selector: 'app-pokemon-detail-component',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonDetailComponentComponent implements OnInit {
 
-  constructor() { }
+  pokemon! : Pokemon
+
+  constructor() { 
+    
+  }
+
+  async mockPokemon(){
+    
+      let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${152}`);
+      let jsonResponse = await data.json();
+
+       this.pokemon = new Pokemon(jsonResponse["name"], jsonResponse["id"], ["lorem ipson"], jsonResponse["sprites"]["front_default"], jsonResponse["height"], jsonResponse["weight"])
+    
+  }
 
   ngOnInit(): void {
+    this.mockPokemon()
   }
 
 }
