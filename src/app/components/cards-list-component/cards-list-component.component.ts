@@ -13,7 +13,7 @@ export class CardsListComponentComponent implements OnInit {
   constructor(private fetchPokemonsService: FetchPokemonsService) {}
 
   async InitializePokemonsList() {
-    this.fetchPokemonsService.GetPokemonsList().then((response) => {
+    this.fetchPokemonsService.GetPokemonsList(152).then((response) => {
       this.pokemonsList = response;
     });
   }
