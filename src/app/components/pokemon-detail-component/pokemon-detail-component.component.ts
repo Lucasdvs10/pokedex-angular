@@ -1,5 +1,7 @@
+import { FetchPokemonsService } from './../../services/fetch-pokemons-service';
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/entities/pokemon';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-detail-component',
@@ -9,22 +11,20 @@ import { Pokemon } from 'src/entities/pokemon';
 export class PokemonDetailComponentComponent implements OnInit {
 
   pokemon! : Pokemon
+  pokemonId! : number
 
-  constructor() { 
-    
-  }
-
-  async mockPokemon(){
-    
-      let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${152}`);
-      let jsonResponse = await data.json();
-
-       this.pokemon = new Pokemon(jsonResponse["name"], jsonResponse["id"], ["lorem ipson"], jsonResponse["sprites"]["front_default"], jsonResponse["height"], jsonResponse["weight"])
-    
+  constructor(private fetchPokemonService : FetchPokemonsService, private route: ActivatedRoute) { 
   }
 
   ngOnInit(): void {
-    this.mockPokemon()
+    this.route.params.subscribe(params =>{
+      this.pokemonId = +params['id']
+
+      this.fetchPokemonService.GetPokemonById(this.pokemonId).then(pokemonResponse => {
+        this.pokemon = pokemonResponse
+      })
+    })    
+
   }
 
 }

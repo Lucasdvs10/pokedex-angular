@@ -1,4 +1,4 @@
-<div class="card" (click)="openPage()">
+<div class="card" [routerLink]="['pokemon-details/', pokemon.GetId()]">
   <h2>{{ pokemon.GetNome() }}</h2>
   <h3>Nº {{ pokemon.GetId() }}</h3>
   <img
