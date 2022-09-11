@@ -12,7 +12,30 @@ h2 {
   margin: 0px;
 }
 
-#stats-card {
+
+#stats-card span {
   background-color: rgba(53, 220, 226, 0.815);
 }
 
+#stats-card #weight {
+  position: relative;
+  top: 17px;
+  right: 91px;
+}
+
+main {
+  padding: 15px 25%;
+}
+
+main img {
+  display: inline;
+}
+
+#botao-voltar{
+  background-color: rgb(243, 39, 39);
+  color: rgb(236, 236, 236);
+  width: 100px;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+}
