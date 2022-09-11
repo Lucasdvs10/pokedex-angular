@@ -10,4 +10,8 @@ export class PokemonCardComponentComponent {
 
   @Input() pokemon! : Pokemon
 
+  openPage(){
+    alert(`O id selecionado é: ${this.pokemon.GetId()}`)
+  }
+
 }
